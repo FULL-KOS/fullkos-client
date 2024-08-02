@@ -1,5 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
+//리액트 라우터 사용을 위한 세팅
+import React from 'react';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 
 function App() {
   return (
