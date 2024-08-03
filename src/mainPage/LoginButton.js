@@ -2,11 +2,11 @@ import React from "react";
 import styles from "./MainPage.module.css";
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 
-function AuthButton(props) {
+function LoginButton(props) {
     return (
-        <Link to="/login" className={`${styles.btn} ${styles.block} ${styles.rounded}`}>{props.name}</Link>
+        <a href="#" className={`${styles.btn} ${styles.rounded}`}>{props.name}</a>
     )
     //${styles['btn-gradient']}
 }
 
-export default AuthButton;
+export default LoginButton;

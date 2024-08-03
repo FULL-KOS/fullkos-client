@@ -4,7 +4,9 @@ import './App.css';
 import React from 'react';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import AuthButton from './mainPage/AuthButton';
-import KomPASS from './KomPASS.png'
+import LoginButton from './mainPage/LoginButton';
+import Input from './mainPage/Input';
+import KomPASS from './KomPASS.png';
 
 function App() {
   return (
@@ -17,12 +19,32 @@ function App() {
         <br/>
         종목 분석을 쉽고 간편하게
       </div>
-      <div>
-        <AuthButton name="로그인"/>
-        <AuthButton name="회원가입"/>
-      </div>
+      <Routes>
+        <Route path="/" element={<Auth/>}/>
+        <Route path="/login" element={<Login/>}/>
+      </Routes>
     </BrowserRouter>
   );
 }
 
+function Auth() {
+  return (
+    <div>
+      <AuthButton name="로그인"/>
+      <AuthButton name="회원가입"/>
+    </div>
+  )
+}
+
+function Login() {
+  return (
+    <div>
+      아이디 
+      <Input name="text"/>
+      비밀번호 
+      <Input name="password"/>
+      <LoginButton name="로그인"/>
+    </div>
+  )
+}
 export default App;
