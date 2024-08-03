@@ -3,28 +3,25 @@ import './App.css';
 //리액트 라우터 사용을 위한 세팅
 import React from 'react';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import AuthButton from './mainPage/AuthButton';
+import KomPASS from './KomPASS.png'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <p>
-          pipeline test
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div>
+        <img src={KomPASS} width='60%'></img>
+      </div>
+      <div className='MainInfo'>
+        어려운 주식투자 
+        <br/>
+        종목 분석을 쉽고 간편하게
+      </div>
+      <div>
+        <AuthButton name="로그인"/>
+        <AuthButton name="회원가입"/>
+      </div>
+    </BrowserRouter>
   );
 }
 

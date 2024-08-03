@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+
+.MainInfo {
+  font-size: 5vh;
+  font-weight: bolder;
+  color: white;
+  margin-bottom: 10vh;
+}
+
+div {
+  text-align: center;
+  margin-top: 9vh;
+}
