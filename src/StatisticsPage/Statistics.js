@@ -1,4 +1,5 @@
 import TradingVolume from "./TradingVolume";
+import TradingBuySell from "./TradingBuySell";
 import KomPASS from "../KomPASS.png";
 import styles from "./Statistics.module.css";
 import ContentHeader from "../userReportPage/ContentHeader";
@@ -11,7 +12,7 @@ function Statistics(props) {
 
   const menuList = {
     0: <TradingVolume industry={industry} />,
-    1: <TradingVolume industry={industry} />,
+    1: <TradingBuySell industry={industry} />,
   };
 
   const menuMap = {
