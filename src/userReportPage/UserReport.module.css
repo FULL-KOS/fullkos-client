@@ -1,0 +1,42 @@
+.userReportDiv {
+    text-align: center;
+    margin-top: 2vh;
+}
+
+.contentsBox {
+    background-color: white;
+    height: 100%;
+    width: 90%;
+    left: 5%;
+    position: absolute;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.header {
+    background-color: #7189C8;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    text-align: center;
+    color: white;
+    padding: 1em;
+}
+
+.contents {
+    color: white;
+    padding: 1em;
+}
+
+.contentHeader {
+    display: block;
+    width: 200px;
+    text-align: center;
+    border-radius: 100px;
+    padding: 5px;
+    font-size: larger;
+    margin: auto;
+}
+
+.userReport {
+    background-color: #7189C8;
+}
