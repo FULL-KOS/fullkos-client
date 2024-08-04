@@ -16,7 +16,16 @@ function UserReport() {
                 </div>
                 <div className={styles.contents}>
                     <ContentHeader value="보유 주식 분석 결과"/>
-                    {/* <Chart/> */}
+                    <div className={styles.chart}>
+                        <Chart/>
+                    </div>
+
+                </div>
+                <div className={styles.contents}>
+                    <ContentHeader value="관심 업종 분석 결과"/>
+                    <div className={styles.innerContentsBox}>
+                        test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>
+                    </div>
                 </div>
             </div>
         </div>

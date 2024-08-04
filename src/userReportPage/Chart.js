@@ -34,7 +34,7 @@ export const data = {
 };
 
 export function Chart() {
-    return <Pie data={data} />;
+    return <Pie data={data}/>;
   }
 
 export default Chart;
