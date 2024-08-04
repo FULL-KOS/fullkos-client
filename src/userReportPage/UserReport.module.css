@@ -27,7 +27,7 @@
 
 .contentHeader {
   display: block;
-  width: 200px;
+  width: max-content;
   text-align: center;
   border-radius: 100px;
   padding: 5px;

@@ -29,24 +29,20 @@ function Statistics(props) {
       <img src={KomPASS} width="25%"></img>
       <div className={styles.contentsBox}>
         <div className={styles.header}>
-          <div className="wrap">
-            <div className="menuBar">
-              <ul className="tabs">
-                <li
-                  className={`${menu === 0 ? "active" : ""}`}
-                  onClick={() => changeMenu(0)}
-                >
-                  {menuMap[0]}
-                </li>
-                <li
-                  className={`${menu === 1 ? "active" : ""}`}
-                  onClick={() => changeMenu(1)}
-                >
-                  {menuMap[1]}
-                </li>
-              </ul>
-            </div>
-          </div>
+          <ul className="tabs">
+            <li
+              className={`${menu === 0 ? "active" : ""}`}
+              onClick={() => changeMenu(0)}
+            >
+              {menuMap[0]}
+            </li>
+            <li
+              className={`${menu === 1 ? "active" : ""}`}
+              onClick={() => changeMenu(1)}
+            >
+              {menuMap[1]}
+            </li>
+          </ul>
         </div>
         <div className={styles.contents + " contentArea"}>
           <ContentHeader
