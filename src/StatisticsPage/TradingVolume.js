@@ -88,12 +88,24 @@ function TradingVolume(props) {
   };
 
   const makeDataSet = (volumes) => {
+    var color = [];
+
+    var dynamicColors = function () {
+      var r = Math.floor(Math.random() * 255);
+      var g = Math.floor(Math.random() * 255);
+      var b = Math.floor(Math.random() * 255);
+      return "rgb(" + r + "," + g + "," + b + ")";
+    };
+    for (var i in volumes) {
+      color.push(dynamicColors());
+    }
+    console.log(color);
     let newData = {
       labels: volumes.map((row) => row.company_name),
       datasets: [
         {
           type: "bar",
-          backgroundColor: "rgb(75, 192, 192)",
+          backgroundColor: color,
           borderRadius: 2,
           data: volumes.map((row) => row.total),
           datalabels: {
