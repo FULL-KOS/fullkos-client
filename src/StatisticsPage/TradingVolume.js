@@ -9,13 +9,15 @@ import {
   BarElement,
 } from "chart.js";
 import styles from "./Statistics.module.css";
+import ChartDataLabels from "chartjs-plugin-datalabels";
 
 Chart.register(
   CategoryScale,
   LinearScale,
   PointElement,
   LineElement,
-  BarElement
+  BarElement,
+  ChartDataLabels
 );
 
 function TradingVolume(props) {
@@ -45,6 +47,13 @@ function TradingVolume(props) {
         tooltip: {
           boxWidth: 15,
         },
+        datalabels: {
+          formatter: function (value, context) {
+            // var idx = context.dataIndex;
+
+            return value;
+          },
+        },
       },
       responsive: true,
       maintainAspectRatio: false,
@@ -60,9 +69,12 @@ function TradingVolume(props) {
       datasets: [
         {
           type: "bar",
-          label: "Dataset 1",
           backgroundColor: "rgb(75, 192, 192)",
           data: volumes.map((row) => row.total),
+          datalabels: {
+            align: "end",
+            anchor: "end",
+          },
         },
       ],
     };
@@ -100,7 +112,7 @@ function TradingVolume(props) {
         type="line"
         data={data}
         options={options}
-        plugins="ChartDataLabels"
+        plugins={ChartDataLabels}
       />
     </div>
   );
