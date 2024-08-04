@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Line } from "react-chartjs-2";
 import {
   Chart,
@@ -24,6 +25,8 @@ function TradingVolume(props) {
   const [industry, setIndustry] = useState(props.industry);
   const [data, setData] = useState({ labels: [], datasets: [] });
   const [options, setOptions] = useState({});
+  const [companyIds, setCompanyIds] = useState([]);
+  const navigate = useNavigate();
 
   const saveData = (data) => {
     setData(data);
@@ -60,6 +63,19 @@ function TradingVolume(props) {
       animation: {
         duration: 2000,
       },
+      onClick: (e) => {
+        const chart = e.chart;
+        const res = chart.getElementsAtEventForMode(
+          e,
+          "nearest",
+          { intersect: true },
+          true
+        );
+        if (res.length === 0) {
+          return;
+        }
+        navigate("/stockDetail", { companyId: companyIds[res[0].index] });
+      },
     });
   };
 
@@ -70,6 +86,7 @@ function TradingVolume(props) {
         {
           type: "bar",
           backgroundColor: "rgb(75, 192, 192)",
+          borderRadius: 2,
           data: volumes.map((row) => row.total),
           datalabels: {
             align: "end",

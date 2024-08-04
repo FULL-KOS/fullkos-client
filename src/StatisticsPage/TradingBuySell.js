@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Line } from "react-chartjs-2";
 import {
   Chart,
@@ -24,6 +25,8 @@ function TradingBuySell(props) {
   const [industry, setIndustry] = useState(props.industry);
   const [data, setData] = useState({ labels: [], datasets: [] });
   const [options, setOptions] = useState({});
+  const [companyIds, setCompanyIds] = useState([]);
+  const navigate = useNavigate();
 
   const saveData = (data) => {
     setData(data);
@@ -60,6 +63,19 @@ function TradingBuySell(props) {
       maintainAspectRatio: false,
       animation: {
         duration: 2000,
+      },
+      onClick: (e) => {
+        const chart = e.chart;
+        const res = chart.getElementsAtEventForMode(
+          e,
+          "nearest",
+          { intersect: true },
+          true
+        );
+        if (res.length === 0) {
+          return;
+        }
+        navigate("/stockDetail", { companyId: companyIds[res[0].index] });
       },
     });
   };
@@ -108,6 +124,7 @@ function TradingBuySell(props) {
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
+        setCompanyIds(data.buySells.map((row) => row.company_id));
         saveData(makeDataSet(data.buySells));
       });
   };
