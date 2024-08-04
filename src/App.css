@@ -37,6 +37,27 @@
   }
 }
 
+html {
+  --background-color: #E3EBFF;
+  height: 100%;
+}
+
+body {
+  background-color: var(--background-color);
+  margin-bottom: 0%;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "MALANGMALANG";
+}
+
+.MainPage {
+  text-align: center;
+  margin-top: 9vh;
+  color: white;
+}
+
 .MainInfo {
   font-size: 5vh;
   font-weight: bolder;
@@ -45,7 +66,6 @@
 }
 
 div {
-  text-align: center;
-  margin-top: 9vh;
   color: white;
+  text-align: center;
 }

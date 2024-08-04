@@ -25,7 +25,6 @@ function App() {
 
   function Auth() {
     return (
-
       <div>
         <AuthButton name="로그인" path="/login"/>
         <AuthButton name="회원가입" path="/"/>
@@ -52,11 +51,18 @@ function App() {
         alert('로그인 되었습니다.');
         // localStorage.setItem('token', data.message);
         navigate("/userReport");
-      } else {
+        } else {
         alert('가입되지 않은 정보입니다.');
       }
     });
   };
+
+  // const applyColor = () => {
+  //   document.documentElement.style.setProperty(
+  //     '--background-color', 
+  //     '#E3EBFF'
+  //   );
+  // }
 
   return (
     <div>
