@@ -13,6 +13,9 @@ function UserReport() {
     const order = ["첫", "두", "세"];
     const [username, setUsername] = useState('');
     const [industryList, setIndustryList] = useState([]);
+    const tmpNameList = [];
+    const tmpVoteList = [];
+    const tmpChartDict = [];
 
     useEffect(() => {
         // Mockdata는 POST 방식 불가
@@ -31,6 +34,15 @@ function UserReport() {
         .then(data => {
             setUsername(data.username);
             setIndustryList(data.industryList);
+            tmpNameList.length = 0;
+            tmpVoteList.length = 0;
+            
+            data.portfolio && data.portfolio.map((portfilioElement) => {
+                tmpNameList.push(portfilioElement.company_name);
+                tmpVoteList.push(portfilioElement.amount);
+                // 급해서 걍 이렇게 할게유,,
+                tmpChartDict[portfilioElement.company_name] = portfilioElement.company_code;
+            });
         });
     }, []);
 
@@ -43,7 +55,7 @@ function UserReport() {
                 </div>
                 <div className={styles.contents}>
                     <ContentHeader value="보유 주식 분석 결과"/>
-                    <Chart/>
+                    <Chart id="pieChart" chartDataList={tmpVoteList} chartNameDataList={tmpNameList} chartInfoDict={tmpChartDict}/>
                 </div>
                 <div className={styles.contents}>
                     <ContentHeader value="관심 업종 분석 결과"/>
@@ -51,10 +63,7 @@ function UserReport() {
                         <h3 className={styles.innerContentsTitle}>{username} 님의 관심 업종 TOP3</h3>
                         {industryList && industryList.map((industyElement, index) => (
                             <InnerContents valueTitle={`${index+1}. ${industyElement.industry}`} value={`${industyElement.industry} 업종은 ${username} 님의 소유 주식 중 ${industyElement.pie}%로, ${order[index]} 번째로 많은 비중을 차지하고 있습니다.`} buttonValue={`${industyElement.industry} TOP10 종목 분석 바로가기`}/>
-                        ))}
-                        {/* <InnerContents valueTitle="1. 반도체" value={`반도체 업종은 ${username} 님의 소유 주식 중 62.2%로, 첫 번째로 많은 비중을 차지하고 있습니다.`} buttonValue="test"/>
-                        <InnerContents valueTitle="2. 반도체" value="반도체 업종은 홍길동 님의 소유 주식 중 62.2%로, 두 번째로 많은 비중을 차지하고 있습니다." buttonValue="test"/>
-                        <InnerContents valueTitle="3. 반도체" value="반도체 업종은 홍길동 님의 소유 주식 중 62.2%로, 세 번째로 많은 비중을 차지하고 있습니다." buttonValue="test"/> */}
+                        ))}                    
                     </div>
                 </div>
             </div>

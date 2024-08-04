@@ -4,7 +4,7 @@ import AnalysisButton from "./AanalysisButton";
 
 function InnerContents(props) {
     return (
-        <text className={styles.innerContents}>
+        <p className={styles.innerContents}>
             {props.valueTitle}
             <br/>
             {props.value}
@@ -12,7 +12,7 @@ function InnerContents(props) {
             <AnalysisButton name={props.buttonValue}/>
             <br/>
             <br/>
-        </text>
+        </p>
     )
 }
 

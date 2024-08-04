@@ -5,17 +5,20 @@
             {
                 "company_id": 1,
                 "company_name": "삼성전자",
-                "amount" : 12
+                "amount" : 24,
+                "company_code": 100
             },
             {
                 "company_id": 2,
                 "company_name": "SK하이닉스",
-                "amount" : 12
+                "amount" : 12,
+                "company_code": 200
             },
             {
                 "company_id": 3,
                 "company_name": "현대자동차",
-                "amount" : 12
+                "amount" : 6,
+                "company_code": 300
             }
         ],
     "industryList": 
