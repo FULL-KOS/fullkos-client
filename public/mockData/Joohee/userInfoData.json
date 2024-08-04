@@ -1,0 +1,36 @@
+{
+    "username": "홍길동",
+    "portfolio":
+        [
+            {
+                "company_id": 1,
+                "company_name": "삼성전자",
+                "amount" : 12
+            },
+            {
+                "company_id": 2,
+                "company_name": "SK하이닉스",
+                "amount" : 12
+            },
+            {
+                "company_id": 3,
+                "company_name": "현대자동차",
+                "amount" : 12
+            }
+        ],
+    "industryList": 
+        [
+            {
+                "industry": "반도체",
+                "pie": 62.2
+            },
+            {
+                "industry": "조선",
+                "pie": 25.8
+            },
+            {
+                "industry": "화장품",
+                "pie": 12.0
+            }
+        ]
+}
