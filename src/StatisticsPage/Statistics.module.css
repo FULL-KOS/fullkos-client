@@ -42,7 +42,7 @@
 .chart {
   width: 90%;
   margin: auto;
-  margin-top: 1em;
+  padding: 100;
   background-color: white;
 }
 
@@ -55,4 +55,6 @@
   border-radius: 15px;
   margin-top: 1em;
   margin-bottom: 1em;
+  padding-top: 2em;
+  padding-bottom: 2em;
 }

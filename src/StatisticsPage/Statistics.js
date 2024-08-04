@@ -44,7 +44,7 @@ function Statistics(props) {
             </li>
           </ul>
         </div>
-        <div className={styles.contents + " contentArea"}>
+        <div className={styles.contents}>
           <ContentHeader
             value={industry + " 종목 " + menuMap[menu] + " 순위"}
           />

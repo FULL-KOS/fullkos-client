@@ -99,7 +99,7 @@ function TradingVolume(props) {
     for (var i in volumes) {
       color.push(dynamicColors());
     }
-    console.log(color);
+
     let newData = {
       labels: volumes.map((row) => row.company_name),
       datasets: [
