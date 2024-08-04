@@ -15,9 +15,7 @@ function UserReport() {
                     홍길동 님의 투자 분석 레포트
                 </div>
                 <div className={styles.contents}>
-                    <ContentHeader>
-                        보유 주식 분석 결과
-                    </ContentHeader>
+                    <ContentHeader value="보유 주식 분석 결과"/>
                     {/* <Chart/> */}
                 </div>
             </div>
