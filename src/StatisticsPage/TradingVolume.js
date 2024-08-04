@@ -20,6 +20,7 @@ Chart.register(
   BarElement,
   ChartDataLabels
 );
+Chart.defaults.font.family = "MALANGMALANG";
 
 function TradingVolume(props) {
   const [industry, setIndustry] = useState(props.industry);
