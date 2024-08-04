@@ -1,0 +1,21 @@
+.menuBar {
+  /* padding: 1rem; */
+  background: #7189c8;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.tabs li {
+  font-size: 1rem;
+  font-weight: bold;
+  display: inline-block;
+  color: #efefef;
+  padding: 1rem;
+  border-style: outset;
+}
+
+.tabs li.active {
+  background-color: #7189c8;
+  height: 100%;
+  border-style: groove;
+}
