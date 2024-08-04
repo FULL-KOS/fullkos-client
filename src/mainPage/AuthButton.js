@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 
 function AuthButton(props) {
     return (
-        <Link to="/login" className={`${styles.btn} ${styles.block} ${styles.rounded}`}>{props.name}</Link>
+        <Link to={props.path} className={`${styles.btn} ${styles.block} ${styles.rounded}`}>{props.name}</Link>
     )
     //${styles['btn-gradient']}
 }

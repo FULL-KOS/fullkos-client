@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 
 function LoginButton(props) {
     return (
-        <a href="#" className={`${styles.btn} ${styles.rounded}`}>{props.name}</a>
+        <button onClick={props.onClick} className={`${styles.btn} ${styles.rounded}`}>{props.name}</button>
     )
     //${styles['btn-gradient']}
 }
