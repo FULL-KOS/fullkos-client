@@ -40,6 +40,13 @@ function TradingBuySell(props) {
     saveData({ labels: [], datasets: [] });
     saveOptions({
       indexAxis: "y",
+      scales: {
+        y: {
+          grid: {
+            display: false,
+          },
+        },
+      },
       plugins: {
         legend: {
           display: true,
