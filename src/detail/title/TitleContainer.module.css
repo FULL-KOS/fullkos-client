@@ -1,0 +1,9 @@
+.title-container {
+    background-color: #7189C8;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    text-align: center;
+    font-size: 36px;
+    color: white;
+    padding: 14px;
+}

@@ -9,7 +9,7 @@ import LoginButton from "./mainPage/LoginButton";
 import Input from "./mainPage/Input";
 import Index from "./mainPage/Index";
 import UserReport from "./userReportPage/UserReport";
-import Statistics from "./StatisticsPage/Statistics";
+import ChartPage from "./detail/ChartPage";
 
 function App() {
   const [idValue, setId] = useState("");
@@ -88,6 +88,7 @@ function App() {
         />
         <Route path="/userReport" element={<UserReport />} />
         <Route path="/statistics" element={<Statistics industry="기타" />} />
+        <Route path="/detail" element={<ChartPage />} />
       </Routes>
     </div>
   );
