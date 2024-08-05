@@ -42,7 +42,8 @@
 .chart {
   width: 90%;
   margin: auto;
-  padding: 100;
+  margin-top: 1em;
+  height: fit-content;
   background-color: white;
 }
 

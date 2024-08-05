@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Line } from "react-chartjs-2";
+import { Bar, Line } from "react-chartjs-2";
 import {
   Chart,
   CategoryScale,
@@ -151,12 +151,7 @@ function TradingBuySell(props) {
 
   return (
     <div className={styles.chart}>
-      <Line
-        type="line"
-        data={data}
-        options={options}
-        plugins={ChartDataLabels}
-      />
+      <Bar type="bar" data={data} options={options} plugins={ChartDataLabels} />
     </div>
   );
 }

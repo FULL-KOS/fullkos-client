@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Line } from "react-chartjs-2";
+import { Bar, Line } from "react-chartjs-2";
 import {
   Chart,
   CategoryScale,
@@ -8,6 +8,7 @@ import {
   PointElement,
   LineElement,
   BarElement,
+  layouts,
 } from "chart.js";
 import styles from "./Statistics.module.css";
 import ChartDataLabels from "chartjs-plugin-datalabels";
@@ -40,6 +41,9 @@ function TradingVolume(props) {
   const init = () => {
     saveData({ labels: [], datasets: [] });
     saveOptions({
+      layout: {
+        padding: {},
+      },
       indexAxis: "y",
       scales: {
         y: {
@@ -145,12 +149,7 @@ function TradingVolume(props) {
 
   return (
     <div className={styles.chart}>
-      <Line
-        type="line"
-        data={data}
-        options={options}
-        plugins={ChartDataLabels}
-      />
+      <Bar type="bar" data={data} options={options} plugins={ChartDataLabels} />
     </div>
   );
 }
