@@ -18,16 +18,16 @@ function UserReport() {
 
     useEffect(() => {
         // Mockdata는 POST 방식 불가
-        fetch('/mockData/Joohee/userInfoData.json', {
-            method: 'GET',
-            // headers: {
-            //   Accept: "application / json",
-            //   'Content-Type': 'application/json;charset=utf-8',
-            // },
-            // body: JSON.stringify({
-            //   id: idValue,
-            //   password: pwValue,
-            // })
+        fetch('http://localhost:8080/api/userReport', {
+            method: 'POST',
+            headers: {
+                Accept: "application/json",
+                'Content-Type': 'application/json;charset=utf-8',
+            },
+            body: JSON.stringify({
+                email: sessionStorage.getItem("email"),
+                dummy: "1234"
+            })
         })
         .then(response => response.json())
         .then(data => {
@@ -38,7 +38,7 @@ function UserReport() {
             
             data.portfolio && data.portfolio.map((portfilioElement) => {
                 tmpNameList.push(portfilioElement.company_name);
-                tmpVoteList.push(portfilioElement.amount);
+                tmpVoteList.push((portfilioElement.amount/data.allAmount)*100);
                 // 급해서 걍 이렇게 할게유,,
                 tmpChartDict[portfilioElement.company_name] = portfilioElement.company_code;
             });
@@ -61,7 +61,7 @@ function UserReport() {
                     <div className={styles.innerContentsBox}>
                         <h3 className={styles.innerContentsTitle}>{username} 님의 관심 업종 TOP3</h3>
                         {industryList && industryList.map((industyElement, index) => (
-                            <InnerContents valueTitle={`${index+1}. ${industyElement.industry}`} value={`${industyElement.industry} 업종은 ${username} 님의 소유 주식 중 ${industyElement.pie}%로, ${order[index]} 번째로 많은 비중을 차지하고 있습니다.`} buttonValue={`${industyElement.industry} TOP10 종목 분석 바로가기`}/>
+                            <InnerContents valueTitle={`${index+1}. ${industyElement.industry}`} value={`${industyElement.industry} 업종은 ${username} 님의 소유 주식 중 ${industyElement.pie.toFixed(2)}%로, ${order[index]} 번째로 많은 비중을 차지하고 있습니다.`} buttonValue={`${industyElement.industry} TOP10 종목 분석 바로가기`}/>
                         ))}                    
                     </div>
                 </div>
