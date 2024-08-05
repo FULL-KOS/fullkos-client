@@ -10,6 +10,7 @@ import Input from "./mainPage/Input";
 import Index from "./mainPage/Index";
 import UserReport from "./userReportPage/UserReport";
 import ChartPage from "./detail/ChartPage";
+import Statistics from "./StatisticsPage/Statistics";
 
 function App() {
   const [idValue, setId] = useState("");
