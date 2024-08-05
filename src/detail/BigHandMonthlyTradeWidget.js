@@ -17,7 +17,7 @@ function BigHandMonthlyTradeWidget() {
 
     useEffect(() => {
         async function fetchBigHandData() {
-            let response = await fetch('http://localhost:8080/api/trading/monthly/100653/data');
+            let response = await fetch('http://221.168.36.43/api/trading/monthly/100653/data');
             let list = await response.json();
 
             let tempList = [];
