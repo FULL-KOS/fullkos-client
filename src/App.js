@@ -11,6 +11,8 @@ import Index from "./mainPage/Index";
 import UserReport from "./userReportPage/UserReport";
 import ChartPage from "./detail/ChartPage";
 import Statistics from "./StatisticsPage/Statistics";
+import MainPage from "./NewMainPage/MainPage";
+import AppHeader from "./Components/AppHeader";
 
 function App() {
   const [emailValue, setEmail] = useState("");
@@ -62,6 +64,7 @@ function App() {
 
   return (
     <div>
+      <AppHeader />
       <Routes>
         <Route
           path="/"
@@ -93,10 +96,10 @@ function App() {
           }
         />
         <Route path="/userReport" element={<UserReport />} />
+        <Route path="/statistics" element={<Statistics industry="기타" />} />
+        <Route path="/detail" element={<ChartPage />} />
+        <Route path="/mainPage" element={<MainPage />} />
       </Routes>
-      <Route path="/userReport" element={<UserReport />} />
-      <Route path="/statistics" element={<Statistics industry="기타" />} />
-      <Route path="/detail" element={<ChartPage />} />
     </div>
   );
 }

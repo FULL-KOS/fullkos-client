@@ -1,0 +1,10 @@
+.app-header {
+  background-color: #edf2fe;
+  height: 60px;
+  text-align: left;
+}
+
+.logo {
+  width: inherit;
+  height: inherit;
+}
