@@ -9,6 +9,7 @@ import LoginButton from './mainPage/LoginButton';
 import Input from './mainPage/Input';
 import Index from './mainPage/Index';
 import UserReport from './userReportPage/UserReport';
+import ChartPage from "./detail/ChartPage";
 
 function App() {
   const [idValue, setId] = useState('');
@@ -74,6 +75,7 @@ function App() {
                                       </div>
                                     }/>
         <Route path='/userReport' element={<UserReport/>}/>
+        <Route path='/detail' element={<ChartPage/>}/>
       </Routes>
     </div>
   );
