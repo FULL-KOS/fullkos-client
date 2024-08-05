@@ -9,6 +9,7 @@ import LoginButton from './mainPage/LoginButton';
 import Input from './mainPage/Input';
 import Index from './mainPage/Index';
 import UserReport from './userReportPage/UserReport';
+import Category from './userReportPage/Category';
 
 function App() {
   const [emailValue, setEmail] = useState('');
@@ -75,6 +76,7 @@ function App() {
                                       </div>
                                     }/>
         <Route path='/userReport' element={<UserReport/>}/>
+        <Route path='/category' element={<Category/>}/>
       </Routes>
     </div>
   );
