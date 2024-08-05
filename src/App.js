@@ -57,13 +57,6 @@ function App() {
     });
   };
 
-  // const applyColor = () => {
-  //   document.documentElement.style.setProperty(
-  //     '--background-color', 
-  //     '#E3EBFF'
-  //   );
-  // }
-
   return (
     <div>
       <Routes>
