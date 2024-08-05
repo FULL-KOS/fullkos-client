@@ -1,5 +1,6 @@
 import CategoryMove from "../userReportPage/CategotyMove";
 import Portfolio from "../userReportPage/Portfolio";
+import Carousel from "./Carousel/Carousel";
 import styles from "./NewMainPage.module.css";
 import Upsurge from "./Upsurge/Upsurge";
 import Volume from "./Volume/Volume";
@@ -7,7 +8,9 @@ import Volume from "./Volume/Volume";
 function MainPage() {
   return (
     <div className={styles.container}>
-      <div className={styles["grid-item"]}>carousel</div>
+      <div className={styles["grid-item"]}>
+        <Carousel />
+      </div>
       <div className={styles["grid-item"]}>
         <Volume />
       </div>

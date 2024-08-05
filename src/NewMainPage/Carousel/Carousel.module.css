@@ -1,0 +1,38 @@
+.itemBox {
+  position: relative;
+}
+
+.item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 33% 34% 34%;
+  height: 50px;
+}
+
+.part {
+  height: 100%;
+  text-align: center;
+}
+
+.part:nth-child(1) {
+  border-style: solid;
+  border-width: 1px;
+  border-color: lightslategray;
+  border-top: 0;
+  border-bottom: 0;
+  border-left: 0;
+}
+
+.part img {
+  width: 30px;
+  margin: auto;
+  display: block;
+}
+
+.buy {
+  color: #de5257;
+}
+
+.sell {
+  color: #2272eb;
+}
