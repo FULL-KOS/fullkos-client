@@ -9,8 +9,8 @@ function InnerContents(props) {
             <br/>
             {props.value}
             <br/>
-            <AnalysisButton name={props.buttonValue}/>
-            <br/>
+            {/* <AnalysisButton name={props.buttonValue}/>
+            <br/> */}
             <br/>
         </p>
     )

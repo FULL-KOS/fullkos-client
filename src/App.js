@@ -9,6 +9,7 @@ import LoginButton from "./mainPage/LoginButton";
 import Input from "./mainPage/Input";
 import Index from "./mainPage/Index";
 import UserReport from "./userReportPage/UserReport";
+import Category from "./userReportPage/Category";
 import ChartPage from "./detail/ChartPage";
 import Statistics from "./StatisticsPage/Statistics";
 import MainPage from "./NewMainPage/MainPage";
@@ -96,6 +97,7 @@ function App() {
           }
         />
         <Route path="/userReport" element={<UserReport />} />
+        <Route path="/category" element={<Category />} />
         <Route path="/statistics" element={<Statistics industry="기타" />} />
         <Route path="/detail" element={<ChartPage />} />
         <Route path="/mainPage" element={<MainPage />} />

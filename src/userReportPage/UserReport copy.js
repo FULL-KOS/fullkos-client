@@ -7,9 +7,6 @@ import ContentHeader from './ContentHeader';
 import Chart from './Chart';
 import InnerContents from './InnerContents';
 import { useEffect } from 'react';
-import CategoryButton from './CategoryButton';
-import CategoryMove from './CategotyMove';
-import Portfolio from './Portfolio';
 
 function UserReport() {
     const order = ["첫", "두", "세"];
@@ -80,8 +77,35 @@ function UserReport() {
     return (
         <div className={styles.userReportDiv} style={{backgroundColor: "#E3EBFF"}}>
             <img src={KomPASS} width='25%'></img>
-            <Portfolio></Portfolio>
-            <CategoryMove></CategoryMove>
+            <div className={styles.contentsBox}>
+                <div>
+                    <div className={styles.header}>
+                        {username} 님의 투자 분석 레포트
+                    </div>
+                    <div className={styles.contents}>
+                        <ContentHeader value="보유 주식 분석 결과"/>
+                        <Chart id="pieChart" chartDataList={tmpVoteList} chartNameDataList={tmpNameList} chartInfoDict={tmpChartDict}/>
+                    </div>
+                    <div className={styles.contents}>
+                        <ContentHeader value="관심 업종 분석 결과"/>
+                        <div className={styles.innerContentsBox}>
+                            <h3 className={styles.innerContentsTitle}>{username} 님의 관심 업종 TOP3</h3>
+                            {industryList && industryList.map((industyElement, index) => (
+                                <InnerContents valueTitle={`${index+1}. ${industyElement.industry}`} value={`${industyElement.industry} 업종은 ${username} 님의 소유 주식 중 ${industyElement.pie.toFixed(2)}%로, ${order[index]} 번째로 많은 비중을 차지하고 있습니다.`} buttonValue={`${industyElement.industry} TOP10 종목 분석 바로가기`}/>
+                            ))}                    
+                        </div>
+                    </div>
+                </div>
+                <div className={styles.hide} style={{display: notLoginCheck===null ? "block" : "none"}}>
+                    <div to="#" className={`${styles.hideInnerBox} ${styles.btn}`}>
+                        로그인하고 포트폴리오 분석하기
+                        <br/>
+                        <Link to="/login" className={`${styles.btn}`}>
+                            로그인
+                        </Link>
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }
