@@ -9,7 +9,6 @@ import InnerContents from './InnerContents';
 import { useEffect } from 'react';
 
 function UserReport() {
-    // const { industyList, industyValue } = this.state;
     const order = ["첫", "두", "세"];
     const [username, setUsername] = useState('');
     const [industryList, setIndustryList] = useState([]);
@@ -47,7 +46,7 @@ function UserReport() {
     }, []);
 
     return (
-        <div className={styles.userReportDiv}>
+        <div className={styles.userReportDiv} style={{backgroundColor: "#E3EBFF"}}>
             <img src={KomPASS} width='25%'></img>
             <div className={styles.contentsBox}>
                 <div className={styles.header}>
