@@ -11,12 +11,12 @@ import Index from './mainPage/Index';
 import UserReport from './userReportPage/UserReport';
 
 function App() {
-  const [idValue, setId] = useState('');
+  const [emailValue, setEmail] = useState('');
   const [pwValue, setPw] = useState('');
   const navigate = useNavigate();
 
-  const saveUserId = event => {
-    setId(event.target.value);
+  const saveUserEmail = event => {
+    setEmail(event.target.value);
   };
 
   const saveUserPw = event => {
@@ -34,21 +34,22 @@ function App() {
 
   const LoginProcess = () => {
     // Mockdata는 POST 방식 불가
-    fetch('/mockData/Joohee/loginData.json', {
-      method: 'GET',
-      // headers: {
-      //   Accept: "application / json",
-      //   'Content-Type': 'application/json;charset=utf-8',
-      // },
-      // body: JSON.stringify({
-      //   id: idValue,
-      //   password: pwValue,
-      // })
+    fetch('http://localhost:8080/api/login', {
+      method: 'POST',
+      headers: {
+        Accept: "application/json",
+        'Content-Type': 'application/json;charset=utf-8',
+      },
+      body: JSON.stringify({
+        email: emailValue,
+        password: pwValue,
+      })
     })
     .then(response => response.json())
     .then(data => {
       if (data.message === "LOGIN SUCCESS") {
         alert('로그인 되었습니다.');
+        sessionStorage.setItem("email", emailValue);
         // localStorage.setItem('token', data.message);
         navigate("/userReport");
         } else {
@@ -65,8 +66,8 @@ function App() {
                                         <Index/>
                                         {/* 이렇게 안하면 포커스가 한글자 적을 때마다 풀림 */}
                                         <div>
-                                          아이디 
-                                          <Input name="text" value={idValue} onChange={saveUserId}/>
+                                          이메일 
+                                          <Input name="text" value={emailValue} onChange={saveUserEmail}/>
                                           비밀번호 
                                           <Input name="password" value={pwValue} onChange={saveUserPw}/>
                                           <LoginButton name="로그인" onClick={LoginProcess}/>
