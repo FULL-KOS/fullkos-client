@@ -1,0 +1,21 @@
+.upsurgeBox {
+  margin: 5%;
+}
+
+.upsurgeList {
+  padding: 10%;
+}
+
+.upsurgeItem {
+  display: flex;
+  justify-content: space-between;
+  margin: 5%;
+  font-size: larger;
+}
+
+.name {
+}
+
+.increase {
+  color: #de5257;
+}
