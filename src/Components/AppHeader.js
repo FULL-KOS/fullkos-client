@@ -44,7 +44,7 @@ function AppHeader() {
           홈
         </div>
         <div id="sector" className={styles.itemText} onClick={navigateSector}>
-          섹터 별로 보기
+          카테고리 별로 보기
         </div>
         <div className={styles.item}> </div>
       </div>
