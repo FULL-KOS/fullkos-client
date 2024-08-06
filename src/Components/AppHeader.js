@@ -2,6 +2,7 @@ import styles from "./AppHeader.module.css";
 import kompass from "../KomPASS.png";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+import ToastAlert from "./ToastAlert";
 
 function AppHeader() {
   const [tab, setTab] = useState(0);
@@ -48,6 +49,7 @@ function AppHeader() {
         </div>
         <div className={styles.item}> </div>
       </div>
+      <ToastAlert />
     </div>
   );
 }
