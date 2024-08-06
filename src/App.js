@@ -101,10 +101,10 @@ function App() {
         <Route path="/category" element={<Category />} />
         <Route path="/statistics" element={<Statistics industry="기타" />} />
         <Route path="/detail" element={<ChartPage />} />
-        <Route path="/mainPage" element={<MainPage />} />
-        <Route path="/aiReport" element={<TmpAIReport />} />
         <Route path="/sector" element={<SectorPage />} />
         <Route path="/" element={<MainPage />} />
+        <Route path="/mainPage" element={<MainPage />} />
+        <Route path="/aiReport" element={<TmpAIReport />} />
       </Routes>
     </div>
   );

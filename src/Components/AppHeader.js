@@ -10,7 +10,7 @@ function AppHeader() {
   const classNameActive = styles.active;
 
   useEffect(() => {
-    setTab(location.pathname === "/sector" ? 1 : 0);
+    setTab(location.pathname === "/sector" ? 0 : 1);
   }, [location]);
 
   useEffect(() => {

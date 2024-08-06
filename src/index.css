@@ -13,11 +13,11 @@
 } */
 
 @font-face {
-  font-family: "MALANGMALANG";
+  font-family: "NANUMGOTHIC";
   font-weight: normal;
-  src: url("./fonts/MALANGMALANGB.TTF") format("truetype");
+  src: url("./fonts/NANUMGOTHICBOLD.TTF") format("truetype");
 }
 
 body {
-  font-family: "MALANGMALANG";
+  font-family: "NANUMGOTHIC";
 }

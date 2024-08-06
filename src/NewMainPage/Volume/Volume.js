@@ -18,7 +18,6 @@ Chart.register(
   BarElement,
   ChartDataLabels
 );
-Chart.defaults.font.family = "MALANGMALANG";
 
 function Volume() {
   const data = {
@@ -62,13 +61,16 @@ function Volume() {
         display: false,
       },
       tooltip: {
-        boxWidth: 15,
+        boxWidth: 100,
       },
       datalabels: {
         formatter: function (value, context) {
           // var idx = context.dataIndex;
 
           return value;
+        },
+        font: {
+          size: 15,
         },
       },
     },
@@ -82,7 +84,7 @@ function Volume() {
   return (
     <div className={styles.volumeBox}>
       <br />
-      최근 7일간 주요주주 거래량 순위
+      최근 7일간 내부자 거래량 순위
       <div className={styles.chart}>
         <Bar
           type="bar"

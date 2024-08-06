@@ -50,7 +50,7 @@ export function Chart(props) {
       datalabels: {
         color: "#000000", // color of the label text
         font: {
-          family: "MALANGMALANG",
+          size: 20,
         },
         align: "center",
         formatter: function (value, context) {

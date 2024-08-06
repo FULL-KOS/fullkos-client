@@ -14,7 +14,7 @@ function Carousel() {
   };
   return (
     <div>
-      오늘 거래된 종목
+      <div className={styles.titleBox}>최신 내부자 거래 종목</div>
       <br />
       <br />
       <Slider {...settings}>
