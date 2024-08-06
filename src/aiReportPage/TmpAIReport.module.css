@@ -48,3 +48,19 @@
   font-size: 2vw;
   text-align: left;
 }
+
+.reportNewsWrap {
+  display: flex;
+}
+
+.reportNewsDiv {
+  text-align: left;
+  font-size: 1.5vw;
+  margin: 3%;
+}
+
+.reportBigHandDiv {
+  text-align: left;
+  font-size: 1.5vw;
+  margin: 3%;
+}
