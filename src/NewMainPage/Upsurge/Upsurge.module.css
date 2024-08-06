@@ -1,5 +1,6 @@
 .upsurgeBox {
   margin: 5%;
+  font-size: 1.5em;
 }
 
 .upsurgeList {
@@ -11,6 +12,7 @@
   justify-content: space-between;
   margin: 5%;
   font-size: larger;
+  margin-bottom: 1em;
 }
 
 .name {
