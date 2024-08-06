@@ -15,6 +15,7 @@ import Statistics from "./StatisticsPage/Statistics";
 import SectorPage from "./sector/SectorPage";
 import MainPage from "./NewMainPage/MainPage";
 import AppHeader from "./Components/AppHeader";
+import TmpAIReport from "./userReportPage/TmpAIReport";
 
 function App() {
   const [emailValue, setEmail] = useState("");
@@ -102,6 +103,8 @@ function App() {
         <Route path="/detail" element={<ChartPage />} />
         <Route path="/sector" element={<SectorPage />} />
         <Route path="/" element={<MainPage />} />
+        <Route path="/mainPage" element={<MainPage />} />
+        <Route path="/aiReport" element={<TmpAIReport />} />
       </Routes>
     </div>
   );
