@@ -15,7 +15,7 @@ import Statistics from "./StatisticsPage/Statistics";
 import SectorPage from "./sector/SectorPage";
 import MainPage from "./NewMainPage/MainPage";
 import AppHeader from "./Components/AppHeader";
-import TmpAIReport from "./userReportPage/TmpAIReport";
+import TmpAIReport from "./aiReportPage/TmpAIReport";
 
 function App() {
   const [emailValue, setEmail] = useState("");
