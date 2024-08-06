@@ -1,7 +1,7 @@
 .app-header {
   height: 60px;
   display: grid;
-  grid-template-columns: 20% 10% 10% 30% 40%;
+  grid-template-columns: 20% 10% 20% 20% 30%;
 }
 
 .item {
@@ -12,7 +12,7 @@
 .itemText {
   background-color: #edf2fe;
   text-align: center;
-  padding: 1em;
+  padding-top: 1em;
   font-size: 1.75em;
 }
 

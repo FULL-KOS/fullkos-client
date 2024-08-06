@@ -1,10 +1,10 @@
 .itemBox {
-  position: relative;
+  /* position: relative; */
   font-size: 1.25em;
 }
 
 .item {
-  position: relative;
+  /* position: relative; */
   display: grid;
   grid-template-columns: 33% 34% 34%;
 }

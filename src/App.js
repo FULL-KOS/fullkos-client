@@ -17,6 +17,7 @@ import MainPage from "./NewMainPage/MainPage";
 import AppHeader from "./Components/AppHeader";
 import TmpAIReport from "./aiReportPage/TmpAIReport";
 import ChatModal from "./detail/ChatModal";
+import StockPage from "./StockPage/StockPage";
 
 function App() {
   const [emailValue, setEmail] = useState("");
@@ -106,7 +107,8 @@ function App() {
         <Route path="/sector" element={<SectorPage />} />
         <Route path="/" element={<MainPage />} />
         <Route path="/mainPage" element={<MainPage />} />
-        <Route path="/aiReport" element={<TmpAIReport />} />
+        <Route path="/aiReport" element={<TmpAIReport />}/>
+        <Route path="/stock" element={<StockPage />} />
       </Routes>
     </div>
   );

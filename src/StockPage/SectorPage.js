@@ -1,9 +1,10 @@
 import WhiteBox from "./whiteBox/WhiteBox";
 import NewHeader from "./NewHeader";
-import styles from "./SectorPage.module.css";
+import styles from "./StockPage.module.css";
 import HeightBox from "./HeightBox";
 import NewsBox from "./NewsBox";
 import { Bar, Doughnut } from "react-chartjs-2";
+import { useNavigate } from "react-router-dom";
 
 function getStockRow({ name, currentPrice, color, stockChange }) {
   return (
@@ -49,6 +50,8 @@ function SectorPage() {
     0, 0, 0, 0, 0, 0, 0,
   ];
 
+  const navigate = useNavigate();
+
   const DonutChart = () => {
     // Data for the chart
     const data = {
@@ -88,7 +91,7 @@ function SectorPage() {
     return (
       <div style={{ width: "50%", margin: "auto" }}>
         <h2 style={{ textAlign: "center" }}>시가 총액 기준 순위</h2>
-        <Doughnut data={data} options={options} />
+        <Doughnut data={data} options={options} onClick={onClick} />
       </div>
     );
   };
@@ -148,7 +151,7 @@ function SectorPage() {
     };
     return (
       <div style={{ width: "500px" }}>
-        <Bar data={buyDataChart} options={options} />
+        <Bar data={buyDataChart} options={options} onClick={onClick} />
       </div>
     );
   };
@@ -236,7 +239,7 @@ function SectorPage() {
   );
 
   let RelatedStocks = (
-    <WhiteBox width={"299px"} height={"615px"}>
+    <WhiteBox width={"299px"} height={"100%"}>
       <div
         style={{
           color: "black",
@@ -308,6 +311,10 @@ function SectorPage() {
     </WhiteBox>
   );
 
+  const onClick = (event) => {
+    navigate("/aiReport");
+  };
+
   return (
     <div
       style={{
@@ -318,6 +325,28 @@ function SectorPage() {
       }}
       className={styles.container}
     >
+      <WhiteBox height={250}>
+        <div
+          style={{
+            color: "black",
+            textAlign: "center",
+            fontSize: "1.75em",
+          }}
+        >
+          주요 뉴스
+        </div>
+        <HeightBox style={{
+            }}/>
+        {news.map((news, index) => {
+          return (
+            <div className={styles.itemBox}> 
+              <NewsBox key={index} />
+              <HeightBox height={"35"} />
+            </div>
+          );
+        })}
+      </WhiteBox>
+      <HeightBox height={"32px"} />
       <div
         style={{
           display: "flex",
@@ -381,28 +410,6 @@ function SectorPage() {
           </WhiteBox>
         </div>
       </div>
-      <WhiteBox height={250}>
-        <div
-          style={{
-            color: "black",
-            textAlign: "center",
-            fontSize: "1.75em",
-          }}
-        >
-          주요 뉴스
-        </div>
-        <HeightBox style={{
-            }}/>
-        {news.map((news, index) => {
-          return (
-            <div className={styles.itemBox}> 
-              <NewsBox key={index} />
-              <HeightBox height={"35"} />
-            </div>
-          );
-        })}
-      </WhiteBox>
-      <HeightBox height={"32px"} />
       <HeightBox height={"32px"} />
     </div>
   );

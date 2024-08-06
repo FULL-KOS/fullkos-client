@@ -1,7 +1,7 @@
 import HeightBox from "./HeightBox";
-import styles from "./SectorPage.module.css";
+import styles from "./StockPage.module.css";
 
-function NewsBox({image}) {
+function NewsBox(props) {
     return (
         <div style={{
             height: "7em",
@@ -16,7 +16,7 @@ function NewsBox({image}) {
                 minWidth: "30%",
                 height: "100%",
             }}>
-                <img src={"https://www.infostockdaily.co.kr/news/photo/202408/200572_194905_111.jpg"} style={{
+                <img src={props.newsImg} style={{
                     width: "100%",
                     height: "100%",
                     objectFit: "cover",
@@ -31,11 +31,11 @@ function NewsBox({image}) {
             }}>
                 {/*제목*/}
                 <div style={{
-                    fontSize: "0.8em",
+                    fontSize: "1.2em",
                     textAlign: "left",
                     color: "black",
                 }}>
-                    반도체주 일제히 급락
+                    {props.newsHeader}
                 </div>
                 <HeightBox height={3}/>
                 {/*내용*/}
@@ -44,15 +44,13 @@ function NewsBox({image}) {
                     textOverflow: "ellipsis",
                     color: "#4E5968",
                     overflow: "hidden",
-                    fontSize: "0.6em",
+                    fontSize: "1em",
                     textAlign: "left",
                     display: "-webkit-box",
                     webkitLineClamp: "3",
                     webkitBoxOrient: "vertical",
                 }}>
-                    최근 반도체 주식들이 일제히 급락
-                    하면서 주식 시장에 큰 충격을 주고
-                    있습니다. 주요 반도체 기업들의 주가가 '뚝'
+                    {props.newsInfo}
                 </div>
             </div>
         </div>
