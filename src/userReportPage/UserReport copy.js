@@ -51,7 +51,7 @@ function UserReport() {
         });
       return;
     }
-    fetch("http://http://221.168.36.43/api/userReport", {
+    fetch("http://221.168.36.43/api/userReport", {
       method: "POST",
       headers: {
         Accept: "application/json",
