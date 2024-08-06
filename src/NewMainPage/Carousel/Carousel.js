@@ -24,6 +24,9 @@ function Carousel() {
 
   useEffect(() => {
     interv = setInterval(nextBtn, 3000);
+    return () => {
+      clearInterval(interv);
+    };
   }, []);
 
   return (
