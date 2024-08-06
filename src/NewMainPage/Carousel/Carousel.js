@@ -23,7 +23,7 @@ function Carousel() {
   };
 
   useEffect(() => {
-    interv = setInterval(nextBtn, 3000);
+    interv = setInterval(nextBtn, 4000);
     return () => {
       clearInterval(interv);
     };
