@@ -12,6 +12,7 @@ import UserReport from "./userReportPage/UserReport";
 import Category from "./userReportPage/Category";
 import ChartPage from "./detail/ChartPage";
 import Statistics from "./StatisticsPage/Statistics";
+import SectorPage from "./sector/SectorPage";
 import MainPage from "./NewMainPage/MainPage";
 import AppHeader from "./Components/AppHeader";
 import TmpAIReport from "./userReportPage/TmpAIReport";
@@ -57,7 +58,7 @@ function App() {
           alert("로그인 되었습니다.");
           sessionStorage.setItem("email", emailValue);
           // localStorage.setItem('token', data.message);
-          navigate("/userReport");
+          navigate("/");
         } else {
           alert("가입되지 않은 정보입니다.");
         }
@@ -69,11 +70,10 @@ function App() {
       <AppHeader />
       <Routes>
         <Route
-          path="/"
+          path="/index"
           element={
             <div>
-              {" "}
-              <Index /> <Auth />{" "}
+              <Index /> <Auth />
             </div>
           }
         />
@@ -103,6 +103,8 @@ function App() {
         <Route path="/detail" element={<ChartPage />} />
         <Route path="/mainPage" element={<MainPage />} />
         <Route path="/aiReport" element={<TmpAIReport />} />
+        <Route path="/sector" element={<SectorPage />} />
+        <Route path="/" element={<MainPage />} />
       </Routes>
     </div>
   );

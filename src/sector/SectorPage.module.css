@@ -1,0 +1,19 @@
+.blackText {
+  color: black;
+}
+
+.flexLeft {
+  display: flex;
+}
+
+div {
+    color: black;
+}
+
+* {
+    font-family: "Apple SD Gothic Neo";
+}
+
+div::-webkit-scrollbar{
+    display: none;
+}
