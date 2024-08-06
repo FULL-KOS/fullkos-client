@@ -37,7 +37,7 @@ function AppHeader() {
     <div>
       <div className={styles["app-header"]}>
         <div className={styles.item}>
-          <img src={kompass} className={styles.logo} />
+          <img src={kompass} className={styles.logo} onClick={navigateHome} />
         </div>
         <div className={styles.item}> </div>
         <div id="home" className={styles.itemText} onClick={navigateHome}>
