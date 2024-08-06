@@ -30,7 +30,7 @@ function TmpAIReport(props) {
       분기별 AI 분석
       <div className={`${styles.reportMainDiv}`}>
         &nbsp; - 2024년 1분기
-        <div className={`${styles.reportMainDiv}`}>임원 및 내부자 동향</div>
+        <div className={`${styles.reportMainDiv}`}>내부자 동향</div>
         <div className={styles.reportBigHandDiv}>{bigHandTrend[0]}</div>
         <div className={`${styles.reportMainDiv}`}>기사 요약</div>
         <div className={styles.reportNewsWrap}>
@@ -45,7 +45,7 @@ function TmpAIReport(props) {
       <div className={styles.reportInnerBox}>
         <div className={`${styles.reportDiv} ${styles.left}`}>
           <div className={styles.reportInnerDiv}>
-            임원 및 내부자들의 월별 매도/매수 현황
+            내부자들의 월별 매도/매수 현황
           </div>
           <div className={styles.reportInnerDiv}>
             <BigHandMonthlyTradeWidget quarter={1} />
@@ -60,7 +60,7 @@ function TmpAIReport(props) {
       </div>
       <div className={`${styles.reportMainDiv}`}>
         &nbsp; - 2024년 2분기
-        <div className={`${styles.reportMainDiv}`}>임원 및 내부자 동향</div>
+        <div className={`${styles.reportMainDiv}`}>내부자 동향</div>
         <div className={styles.reportBigHandDiv}>{bigHandTrend[1]}</div>
         <div className={`${styles.reportMainDiv}`}>기사 요약</div>
         <div className={styles.reportNewsWrap}>
@@ -75,7 +75,7 @@ function TmpAIReport(props) {
       <div className={styles.reportInnerBox}>
         <div className={`${styles.reportDiv} ${styles.left}`}>
           <div className={styles.reportInnerDiv}>
-            임원 및 내부자들의 월별 매도/매수 현황
+            내부자들의 월별 매도/매수 현황
           </div>
           <div className={styles.reportInnerDiv}>
             <BigHandMonthlyTradeWidget quarter={2} />
