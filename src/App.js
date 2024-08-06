@@ -57,7 +57,7 @@ function App() {
           alert("로그인 되었습니다.");
           sessionStorage.setItem("email", emailValue);
           // localStorage.setItem('token', data.message);
-          navigate("/userReport");
+          navigate("/");
         } else {
           alert("가입되지 않은 정보입니다.");
         }
@@ -69,11 +69,10 @@ function App() {
       <AppHeader />
       <Routes>
         <Route
-          path="/"
+          path="/index"
           element={
             <div>
-              {" "}
-              <Index /> <Auth />{" "}
+              <Index /> <Auth />
             </div>
           }
         />
@@ -102,7 +101,7 @@ function App() {
         <Route path="/statistics" element={<Statistics industry="기타" />} />
         <Route path="/detail" element={<ChartPage />} />
         <Route path="/sector" element={<SectorPage />} />
-        <Route path="/mainPage" element={<MainPage />} />
+        <Route path="/" element={<MainPage />} />
       </Routes>
     </div>
   );
