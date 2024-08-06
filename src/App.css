@@ -51,7 +51,11 @@ body {
 .MainPage {
   text-align: center;
   margin-top: 9vh;
-  color: white;
+  background-color: #edf2fe;
+}
+
+div:has(> .MainPage) {
+  background-color: #edf2fe;
 }
 
 .MainInfo {
