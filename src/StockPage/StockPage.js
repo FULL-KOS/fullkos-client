@@ -4,6 +4,11 @@ import styles from "./StockPage.module.css";
 import HeightBox from "./HeightBox";
 import NewsBox from "./NewsBox";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import BigHandMonthlyTradeWidget from "../detail/BigHandMonthlyTradeWidget";
+import SummaryTableWidget from "../detail/table/SummaryTableWidget";
+import MonthlyBubbleChart from "../detail/bubble/MonthlyBubbleChart";
+import React from "react";
+import RecentTable from "./RecentTable";
 
 
 function StockPage() {
@@ -44,7 +49,7 @@ function StockPage() {
             <div style={{fontSize: "2.5em", overflow: "auto"}}>삼성전자 분석</div>
             <button onClick={onClickAlarm} className={`${styles.btn} ${styles.rounded}`}>🔔해당 종목 내부자 거래 알림 받기</button>
             </div>
-            <WhiteBox height={250}>
+            <WhiteBox height={""}>
                 <div
                     style={{
                         color: "black",
@@ -52,25 +57,30 @@ function StockPage() {
                         fontSize: "1.75em",
                     }}
                 >
-                삼성전자 최근 내부자 거래 목록
+                    삼성전자 최근 내부자 거래 목록
                 </div>
-
+                <HeightBox height={"42px"}/>
+                <div style={{
+                    padding: '0px 37px',
+                }}>
+                    <RecentTable/>
+                </div>
+                <HeightBox height={"42px"}/>
             </WhiteBox>
             <div className={styles.item}>
                 <div className={`${styles.part} ${styles.background}`}>
                     <div>
                         내부자들의 월별 매도/매수 현황
                         <div>
-                            여기에 그래프를 넣으세요
+                            <BigHandMonthlyTradeWidget greyBackground={false}/>
                         </div>
                     </div>
-                    
                 </div>
                 <div className={`${styles.part} ${styles.background}`}>
                     <div>
                         월별 기사 분석
                         <div>
-                            여기에 그래프를 넣으세요
+                            <MonthlyBubbleChart greyBackground={false}/>
                         </div>
                     </div>
                 </div>

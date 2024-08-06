@@ -9,7 +9,7 @@ class BigHandMonthlyTrade {
     }
 }
 
-function BigHandMonthlyTradeWidget() {
+function BigHandMonthlyTradeWidget({greyBackground = true}) {
 
     const [bigHandMonthlyTradeList, setBigHandMonthlyTradeList] = useState([]);
     const [buyList, setBuyList] = useState([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
@@ -77,7 +77,7 @@ function BigHandMonthlyTradeWidget() {
     };
 
     return (
-        <div style={{padding: '48px 86px', backgroundColor: '#D9D9D9', borderRadius: '18px'}}>
+        <div style={{padding: greyBackground ? '48px 86px' : 0, backgroundColor: '#D9D9D9', borderRadius: '18px'}}>
             <div style={{backgroundColor: 'white'}}>
                 <Bar data={data} options={options}/>
             </div>

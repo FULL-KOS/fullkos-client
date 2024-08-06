@@ -1,7 +1,7 @@
 import {Bubble} from "react-chartjs-2";
 import React, {useEffect, useState} from "react";
 
-function MonthlyBubbleChart() {
+function MonthlyBubbleChart({greyBackground = true}) {
 
     class News {
         constructor(title, content, url, sentiment, date) {
@@ -140,7 +140,7 @@ function MonthlyBubbleChart() {
     }
 
     return (
-        <div style={{padding: '48px 86px', backgroundColor: '#D9D9D9', borderRadius: '18px'}}>
+        <div style={{padding: greyBackground ? '48px 86px' : 0, backgroundColor: '#D9D9D9', borderRadius: '18px'}}>
             <div style={{backgroundColor: 'white'}}>
                 <div>
                     <Bubble data={chartData} options={options}/>
