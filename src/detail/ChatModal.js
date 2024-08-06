@@ -19,7 +19,7 @@ const ChatModal = () => {
         setMessages([...messages, userMessage]);
         setInputMessage('');
 
-        let gptResponse = await fetch("http://localhost:8080/news/gpt?question=" + inputMessage, {
+        let gptResponse = await fetch("http://221.168.36.43/api/news/gpt?question=" + inputMessage, {
             method: "GET",
         });
         let gptResponseJson = await gptResponse.json();
