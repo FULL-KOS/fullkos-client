@@ -12,6 +12,7 @@ import UserReport from "./userReportPage/UserReport";
 import Category from "./userReportPage/Category";
 import ChartPage from "./detail/ChartPage";
 import Statistics from "./StatisticsPage/Statistics";
+import SectorPage from "./sector/SectorPage";
 import MainPage from "./NewMainPage/MainPage";
 import AppHeader from "./Components/AppHeader";
 
@@ -100,6 +101,7 @@ function App() {
         <Route path="/category" element={<Category />} />
         <Route path="/statistics" element={<Statistics industry="기타" />} />
         <Route path="/detail" element={<ChartPage />} />
+        <Route path="/sector" element={<SectorPage />} />
         <Route path="/mainPage" element={<MainPage />} />
       </Routes>
     </div>
