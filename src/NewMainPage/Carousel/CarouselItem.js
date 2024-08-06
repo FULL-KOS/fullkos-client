@@ -7,11 +7,11 @@ function CarouselItem(props) {
         <img src={props.img} />
         {props.name}
       </div>
-      <div className={styles.part}>
+      <div className={`${styles.part} ${styles.background}`}>
         <div>거래자 : {props.buyer}</div>
         <div>보유 주식 수: {props.holdings}</div>
       </div>
-      <div className={styles.part}>
+      <div className={`${styles.part} ${styles.background}`}>
         <div
           className={props.amount.charAt(0) === "-" ? styles.sell : styles.buy}
         >

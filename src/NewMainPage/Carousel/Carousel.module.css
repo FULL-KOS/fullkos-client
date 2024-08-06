@@ -1,17 +1,25 @@
 .itemBox {
   position: relative;
+  font-size: 1.25em;
 }
 
 .item {
   position: relative;
   display: grid;
   grid-template-columns: 33% 34% 34%;
-  height: 50px;
 }
 
 .part {
-  height: 100%;
   text-align: center;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+.background {
+  background-color: #edf2fe;
+  border-radius: 5px;
+  margin-left: 1em;
+  margin-right: 1em;
 }
 
 .part:nth-child(1) {
@@ -24,7 +32,7 @@
 }
 
 .part img {
-  width: 30px;
+  width: 2em;
   margin: auto;
   display: block;
 }
@@ -36,3 +44,14 @@
 .sell {
   color: #2272eb;
 }
+
+.titleBox {
+  /* background-color: black;
+  color: white; */
+  padding: 0.5em;
+  border-radius: 5px;
+  display: inline-block;
+  font-size: 1.75em;
+}
+
+

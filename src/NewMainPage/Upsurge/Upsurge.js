@@ -5,7 +5,7 @@ function Upsurge() {
   return (
     <div className={styles.upsurgeBox}>
       <br />
-      주요주주의 거래량이 급증한 카테고리
+      내부자의 거래량이 급증한 카테고리
       <ul className={styles.upsurgeList}>
         <UpsurgeItem name="반도체" increase="22" />
         <UpsurgeItem name="소재" increase="18" />
