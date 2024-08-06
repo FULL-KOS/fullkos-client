@@ -1,7 +1,7 @@
 import { Bubble } from "react-chartjs-2";
 import React, { useEffect, useState } from "react";
 
-function MonthlyBubbleChart() {
+function MonthlyBubbleChart(props) {
   class News {
     constructor(title, content, url, sentiment, date) {
       this.title = title;
@@ -27,6 +27,18 @@ function MonthlyBubbleChart() {
     ],
   });
 
+  const [quarterList, setQuarterList] = useState(
+    props.quarter == 1
+      ? [0, 1, 2]
+      : props.quarter == 2
+      ? [3, 4, 5]
+      : props.quarter == 3
+      ? [6, 7, 8]
+      : props.quarter == 4
+      ? [9, 10, 11]
+      : []
+  );
+
   useEffect(() => {
     async function fetchData() {
       let response = await fetch("/samsung_news_senti.json");
@@ -43,6 +55,10 @@ function MonthlyBubbleChart() {
         );
         let newsDate = new Date(news.date);
         newsDate.setDate(1);
+        let month = newsDate.getMonth();
+        if (quarterList.indexOf(month) === -1) {
+          continue;
+        }
 
         if (newsDict[newsDate] === undefined) {
           newsDict[newsDate] = {

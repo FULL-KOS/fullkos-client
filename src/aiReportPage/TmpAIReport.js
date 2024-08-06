@@ -33,8 +33,14 @@ function TmpAIReport(props) {
         <div className={`${styles.reportMainDiv}`}>임원 및 주요주주 동향</div>
         <div className={styles.reportBigHandDiv}>{bigHandTrend[0]}</div>
         <div className={`${styles.reportMainDiv}`}>기사 요약</div>
-        <div className={styles.reportNewsDiv}>{goodNews[0]}</div>
-        <div className={styles.reportNewsDiv}>{badNews[0]}</div>
+        <div className={styles.reportNewsWrap}>
+          <div className={styles.reportNewsSenti}>👍</div>
+          <div className={styles.reportNewsDiv}>{goodNews[0]}</div>
+        </div>
+        <div className={styles.reportNewsWrap}>
+          <div className={styles.reportNewsSenti}>👎</div>
+          <div className={styles.reportNewsDiv}>{badNews[0]}</div>
+        </div>
       </div>
       <div className={styles.reportInnerBox}>
         <div className={`${styles.reportDiv} ${styles.left}`}>
@@ -48,7 +54,7 @@ function TmpAIReport(props) {
         <div className={`${styles.reportDiv} ${styles.right}`}>
           <div className={styles.reportInnerDiv}>월별 기사 분석</div>
           <div className={styles.reportInnerDiv}>
-            <MonthlyBubbleChart />
+            <MonthlyBubbleChart quarter={1} />
           </div>
         </div>
       </div>
@@ -57,8 +63,12 @@ function TmpAIReport(props) {
         <div className={`${styles.reportMainDiv}`}>임원 및 주요주주 동향</div>
         <div className={styles.reportBigHandDiv}>{bigHandTrend[1]}</div>
         <div className={`${styles.reportMainDiv}`}>기사 요약</div>
-        <div claaName={styles.reportNewsWrap}>
+        <div className={styles.reportNewsWrap}>
+          <div className={styles.reportNewsSenti}>👍</div>
           <div className={styles.reportNewsDiv}>{goodNews[1]}</div>
+        </div>
+        <div className={styles.reportNewsWrap}>
+          <div className={styles.reportNewsSenti}>👎</div>
           <div className={styles.reportNewsDiv}>{badNews[1]}</div>
         </div>
       </div>
@@ -74,7 +84,7 @@ function TmpAIReport(props) {
         <div className={`${styles.reportDiv} ${styles.right}`}>
           <div className={styles.reportInnerDiv}>월별 기사 분석</div>
           <div className={styles.reportInnerDiv}>
-            <MonthlyBubbleChart />
+            <MonthlyBubbleChart quarter={2} />
           </div>
         </div>
       </div>
