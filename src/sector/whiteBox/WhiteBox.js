@@ -8,7 +8,7 @@ function WhiteBox({width, height, children, flexGrow}) {
             backgroundColor: "white",
             borderRadius: "16px",
             flexGrow: flexGrow,
-            padding: "16px",
+            paddingTop: "1.75em",
         }}>
             {children}
         </div>

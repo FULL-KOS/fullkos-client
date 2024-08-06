@@ -103,10 +103,10 @@ function SectorPage() {
           data: [80000, 50000, 30000, 60000, 70000], // Example data
           backgroundColor: [
             "rgba(255, 99, 132, 0.6)",
-            // 'rgba(54, 162, 235, 0.6)',
-            // 'rgba(255, 206, 86, 0.6)',
-            // 'rgba(75, 192, 192, 0.6)',
-            // 'rgba(153, 102, 255, 0.6)',
+            'rgba(54, 162, 235, 0.6)',
+            'rgba(255, 206, 86, 0.6)',
+            'rgba(75, 192, 192, 0.6)',
+            'rgba(153, 102, 255, 0.6)',
           ],
           // borderColor: [
           //     'rgba(255, 99, 132, 1)',
@@ -125,6 +125,7 @@ function SectorPage() {
       plugins: {
         legend: {
           position: "top",
+          display: false
         },
         title: {
           display: true,
@@ -312,11 +313,32 @@ function SectorPage() {
       style={{
         flexDirection: "column",
         display: "flex",
-        height: "100vh",
         overflowY: "hidden",
         backgroundColor: "#F6F7F9",
       }}
+      className={styles.container}
     >
+      <WhiteBox height={250}>
+        <div
+          style={{
+            color: "black",
+            textAlign: "center",
+            fontSize: "1.75em",
+          }}
+        >
+          주요 뉴스
+        </div>
+        <HeightBox style={{
+            }}/>
+        {news.map((news, index) => {
+          return (
+            <div className={styles.itemBox}> 
+              <NewsBox key={index} />
+              <HeightBox height={"35"} />
+            </div>
+          );
+        })}
+      </WhiteBox>
       <HeightBox height={"32px"} />
       <div
         style={{
@@ -325,25 +347,6 @@ function SectorPage() {
           flexDirection: "row",
         }}
       >
-        <WhiteBox width={281}>
-          <div
-            style={{
-              color: "black",
-              display: "flex",
-            }}
-          >
-            주요 뉴스
-          </div>
-          <HeightBox height={14} />
-          {news.map((news, index) => {
-            return (
-              <div>
-                <NewsBox key={index} />
-                <HeightBox height={"16px"} />
-              </div>
-            );
-          })}
-        </WhiteBox>
         <div
           style={{
             width: "36px",
