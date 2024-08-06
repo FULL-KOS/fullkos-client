@@ -1,0 +1,70 @@
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.reportBox {
+  background-color: white;
+  margin-left: 5%;
+  margin-right: 5%;
+  border-radius: 15px;
+  overflow: hidden;
+  text-align: left;
+  padding: 1em;
+  font-size: 3vw;
+}
+
+.reportInnerBox {
+  background-color: white;
+  color: black;
+  border-radius: 5px;
+  margin: 0.5em;
+  overflow: hidden;
+}
+
+.reportMainDiv {
+  color: black;
+  background-color: #edf2fe;
+  border-radius: 5px;
+  padding: 1em;
+  margin: 0.5em;
+  text-align: left;
+  font-size: smaller;
+}
+
+.reportDiv {
+  color: black;
+  background-color: #edf2fe;
+  border-radius: 5px;
+  padding: 1em;
+  width: 49%;
+  text-align: center;
+}
+
+.reportInnerDiv {
+  font-size: 2vw;
+  text-align: left;
+}
+
+.reportNewsWrap {
+  display: flex;
+}
+
+.reportNewsDiv {
+  text-align: left;
+  font-size: 1.5vw;
+  margin: 3%;
+}
+
+.reportBigHandDiv {
+  text-align: left;
+  font-size: 1.5vw;
+  margin: 3%;
+}
+
+.reportNewsSenti {
+  margin-top: 5%;
+}

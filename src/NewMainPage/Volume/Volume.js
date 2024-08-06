@@ -9,6 +9,7 @@ import {
   BarElement,
 } from "chart.js";
 import ChartDataLabels from "chartjs-plugin-datalabels";
+import { useEffect } from "react";
 
 Chart.register(
   CategoryScale,
@@ -20,7 +21,14 @@ Chart.register(
 );
 
 function Volume() {
-  const data = {
+  var dynamicColors = function () {
+    var r = Math.floor(Math.random() * 255);
+    var g = Math.floor(Math.random() * 255);
+    var b = Math.floor(Math.random() * 255);
+    return "rgb(" + r + "," + g + "," + b + ")";
+  };
+
+  let data = {
     labels: [
       "삼성전자",
       "현대자동차",
@@ -33,7 +41,15 @@ function Volume() {
     datasets: [
       {
         type: "bar",
-        backgroundColor: "#222222",
+        backgroundColor: [
+          dynamicColors(),
+          dynamicColors(),
+          dynamicColors(),
+          dynamicColors(),
+          dynamicColors(),
+          dynamicColors(),
+          dynamicColors(),
+        ],
         borderRadius: 2,
         data: [1400000, 1220008, 1000010, 959000, 650000, 240000, 123000],
         datalabels: {

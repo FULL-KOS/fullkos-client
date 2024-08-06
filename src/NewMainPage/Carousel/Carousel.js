@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import CarouselItem from "./CarouselItem";
+import { useEffect } from "react";
 
 function Carousel() {
   const settings = {
@@ -12,6 +13,19 @@ function Carousel() {
     slidesToScroll: 1,
     adaptiveHeight: true,
   };
+
+  var interv;
+
+  const nextBtn = function () {
+    if (document.getElementsByClassName("slick-next")[0]) {
+      document.getElementsByClassName("slick-next")[0].click();
+    }
+  };
+
+  useEffect(() => {
+    interv = setInterval(nextBtn, 3000);
+  }, []);
+
   return (
     <div>
       <div className={styles.titleBox}>최신 내부자 거래 종목</div>

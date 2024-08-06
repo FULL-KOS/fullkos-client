@@ -37,14 +37,14 @@ function AppHeader() {
     <div>
       <div className={styles["app-header"]}>
         <div className={styles.item}>
-          <img src={kompass} className={styles.logo} />
+          <img src={kompass} className={styles.logo} onClick={navigateHome} />
         </div>
         <div className={styles.item}> </div>
         <div id="home" className={styles.itemText} onClick={navigateHome}>
           홈
         </div>
         <div id="sector" className={styles.itemText} onClick={navigateSector}>
-          섹터 별로 보기
+          카테고리 별로 보기
         </div>
         <div className={styles.item}> </div>
       </div>

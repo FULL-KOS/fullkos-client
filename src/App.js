@@ -15,7 +15,8 @@ import Statistics from "./StatisticsPage/Statistics";
 import SectorPage from "./sector/SectorPage";
 import MainPage from "./NewMainPage/MainPage";
 import AppHeader from "./Components/AppHeader";
-import TmpAIReport from "./userReportPage/TmpAIReport";
+import TmpAIReport from "./aiReportPage/TmpAIReport";
+import ChatModal from "./detail/ChatModal";
 
 function App() {
   const [emailValue, setEmail] = useState("");
@@ -68,6 +69,7 @@ function App() {
   return (
     <div>
       <AppHeader />
+      <ChatModal/>
       <Routes>
         <Route
           path="/index"
