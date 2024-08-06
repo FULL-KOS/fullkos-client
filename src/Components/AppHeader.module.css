@@ -1,10 +1,20 @@
 .app-header {
+  height: 60px;
+  display: grid;
+  grid-template-columns: 20% 10% 10% 30% 40%;
+}
+
+.item {
   background-color: #edf2fe;
   height: 60px;
-  text-align: left;
+  text-align: center;
+  padding-top: 1em;
 }
 
 .logo {
-  width: inherit;
-  height: inherit;
+  height: 60px;
+}
+
+.active {
+  color: #cccccc;
 }
