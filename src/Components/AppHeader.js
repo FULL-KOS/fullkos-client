@@ -1,12 +1,12 @@
 import styles from "./AppHeader.module.css";
 import kompass from "../KomPASS.png";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 function AppHeader() {
   const [tab, setTab] = useState(0);
   const location = useLocation();
-
+  const navigate = useNavigate();
   const classNameActive = styles.active;
 
   useEffect(() => {
@@ -25,6 +25,14 @@ function AppHeader() {
     }
   }, [tab]);
 
+  const navigateHome = function (e) {
+    navigate("/");
+  };
+
+  const navigateSector = function (e) {
+    navigate("/sector");
+  };
+
   return (
     <div>
       <div className={styles["app-header"]}>
@@ -32,10 +40,10 @@ function AppHeader() {
           <img src={kompass} className={styles.logo} />
         </div>
         <div className={styles.item}> </div>
-        <div id="home" className={styles.itemText}>
+        <div id="home" className={styles.itemText} onClick={navigateHome}>
           홈
         </div>
-        <div id="sector" className={styles.itemText}>
+        <div id="sector" className={styles.itemText} onClick={navigateSector}>
           섹터 별로 보기
         </div>
         <div className={styles.item}> </div>
