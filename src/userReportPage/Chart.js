@@ -79,8 +79,8 @@ export function Chart(props) {
     const dataIndex = click_result[0].index;
     const label = chartNameData[click_result[0].index];
     const code = chartInfoDict[label];
-    // alert(code);
     navigate("/stock");
+    // alert(code);
   };
 
   return (
