@@ -80,7 +80,7 @@ export function Chart(props) {
     const label = chartNameData[click_result[0].index];
     const code = chartInfoDict[label];
     // alert(code);
-    navigate("/aiReport");
+    navigate("/stock");
   };
 
   return (
