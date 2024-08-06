@@ -11,13 +11,11 @@ function AppHeader() {
 
   useEffect(() => {
     setTab(location.pathname === "/sector" ? 1 : 0);
-    console.log(location);
   }, [location]);
 
   useEffect(() => {
     const home = document.getElementById("home");
     const sector = document.getElementById("sector");
-    console.log(classNameActive);
     if (tab == 0) {
       home.classList.add(classNameActive);
       sector.classList.remove(classNameActive);
@@ -34,10 +32,10 @@ function AppHeader() {
           <img src={kompass} className={styles.logo} />
         </div>
         <div className={styles.item}> </div>
-        <div id="home" className={styles.item}>
+        <div id="home" className={styles.itemText}>
           홈
         </div>
-        <div id="sector" className={styles.item}>
+        <div id="sector" className={styles.itemText}>
           섹터 별로 보기
         </div>
         <div className={styles.item}> </div>
